@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aza_png_official | Покраска и Полировка</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#0b0b0b;
+color:white;
+}
+
+/* LANGUAGE */
+.lang{
+position:fixed;
+top:15px;
+right:15px;
+z-index:1000;
+}
+.lang button{
+background:#1c1c1c;
+color:white;
+border:none;
+padding:8px 12px;
+margin-left:5px;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer;
+}
+.lang button.active{
+background:#f1c40f;
+color:black;
+}
+
+/* HERO */
+.hero{
+background:
+linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.9)),
+url("https://images.unsplash.com/photo-1503376780353-7e6692767b70");
+background-size:cover;
+background-position:center;
+padding:100px 20px;
+text-align:center;
+}
+.hero h1{
+font-size:34px;
+color:#f1c40f;
+}
+.hero p{
+font-size:18px;
+margin:10px 0 20px;
+}
+.hero a{
+display:inline-block;
+padding:16px 26px;
+background:#3498db;
+color:white;
+font-weight:bold;
+border-radius:30px;
+text-decoration:none;
+font-size:18px;
+}
+
+/* SECTIONS */
+section{
+background:#141414;
+margin:12px;
+padding:25px;
+border-radius:16px;
+}
+h2{
+color:#f1c40f;
+margin-bottom:15px;
+}
+ul{padding-left:18px;}
+li{margin-bottom:10px}
+
+/* FEATURES */
+.features{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+}
+.feature{
+background:#1c1c1c;
+padding:15px;
+border-radius:12px;
+text-align:center;
+}
+
+/* BUTTONS */
+.btn{
+display:block;
+margin-top:15px;
+padding:16px;
+text-align:center;
+border-radius:14px;
+font-size:18px;
+font-weight:bold;
+text-decoration:none;
+}
+.call{background:#3498db;color:white;}
+.insta{
+background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af);
+color:white;
+}
+
+/* FLOAT */
+.floating{
+position:fixed;
+bottom:15px;
+right:15px;
+}
+.float-call{
+padding:14px 18px;
+border-radius:50px;
+font-weight:bold;
+text-decoration:none;
+background:#3498db;
+color:white;
+box-shadow:0 4px 10px rgba(0,0,0,.6);
+}
+
+footer{
+text-align:center;
+padding:15px;
+font-size:14px;
+opacity:.7;
+}
+</style>
+</head>
+
+<body>
+
+<!-- LANGUAGE -->
+<div class="lang">
+<button id="kzBtn" class="active" onclick="setLang('kz')">KZ</button>
+<button id="ruBtn" onclick="setLang('ru')">RU</button>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+<h1>Aza_png_official</h1>
+<p id="heroText">Алматыдағы кәсіби покраска және полировка</p>
+<a id="ctaBtn" href="tel:87007201252">
+Қоңырау шалу
+</a>
+</div>
+
+<section>
+<h2 id="whyTitle">Неге бізді таңдайды</h2>
+<div class="features">
+<div class="feature" id="f1">🎨 Түсті дәл таңдау</div>
+<div class="feature" id="f2">✨ Айнадай жылтыр</div>
+<div class="feature" id="f3">🛠 Тәжірибелі маман</div>
+<div class="feature" id="f4">🧪 Сапалы материалдар</div>
+</div>
+</section>
+
+<section>
+<h2 id="serviceTitle">Қызметтер</h2>
+<ul>
+<li id="s1">Кузов покраскасы</li>
+<li id="s2">Деталь покраскасы</li>
+<li id="s3">Кузов полировкасы</li>
+<li id="s4">Фара полировкасы</li>
+<li id="s5">Керамика / лак</li>
+</ul>
+</section>
+
+<section>
+<h2 id="garTitle">Гарантия</h2>
+<ul>
+<li id="g1">Барлық жұмысқа гарантия</li>
+<li id="g2">Таза әрі ұқыпты жұмыс</li>
+<li id="g3">Нәтиже бірден көрінеді</li>
+</ul>
+</section>
+
+<section>
+<h2 id="contactTitle">Байланыс</h2>
+
+<p id="addressText" style="opacity:.85">
+📍 Алматы, Рыскулова 103/3
+</p>
+
+<a class="btn call" href="tel:87007201252">
+Қоңырау шалу
+</a>
+
+<a class="btn insta" href="https://instagram.com/azamat_307_05">
+Instagram: @azamat_307_05
+</a>
+</section>
+
+<footer>© 2026 Aza_png_official</footer>
+
+<!-- FLOAT CALL -->
+<div class="floating">
+<a class="float-call" href="tel:87007201252">Звонок</a>
+</div>
+
+<script>
+function setLang(lang){
+kzBtn.classList.remove("active");
+ruBtn.classList.remove("active");
+document.getElementById(lang+"Btn").classList.add("active");
+
+if(lang==="ru"){
+heroText.innerText="Профессиональная покраска и полировка автомобилей в Алматы";
+ctaBtn.innerText="Позвонить";
+whyTitle.innerText="Почему выбирают нас";
+f1.innerText="🎨 Идеальный подбор цвета";
+f2.innerText="✨ Блеск как с салона";
+f3.innerText="🛠 Опытный мастер";
+f4.innerText="🧪 Качественные материалы";
+serviceTitle.innerText="Услуги";
+s1.innerText="Покраска кузова";
+s2.innerText="Покраска деталей";
+s3.innerText="Полировка кузова";
+s4.innerText="Полировка фар";
+s5.innerText="Керамика / лак";
+garTitle.innerText="Гарантия";
+g1.innerText="Гарантия на все работы";
+g2.innerText="Аккуратная работа";
+g3.innerText="Видимый результат";
+contactTitle.innerText="Контакты";
+addressText.innerText="📍 Алматы, Рыскулова 103/3";
+}else{
+heroText.innerText="Алматыдағы кәсіби покраска және полировка";
+ctaBtn.innerText="Қоңырау шалу";
+whyTitle.innerText="Неге бізді таңдайды";
+f1.innerText="🎨 Түсті дәл таңдау";
+f2.innerText="✨ Айнадай жылтыр";
+f3.innerText="🛠 Тәжірибелі маман";
+f4.innerText="🧪 Сапалы материалдар";
+serviceTitle.innerText="Қызметтер";
+s1.innerText="Кузов покраскасы";
+s2.innerText="Деталь покраскасы";
+s3.innerText="Кузов полировкасы";
+s4.innerText="Фара полировкасы";
+s5.innerText="Керамика / лак";
+garTitle.innerText="Гарантия";
+g1.innerText="Барлық жұмысқа гарантия";
+g2.innerText="Таза әрі ұқыпты жұмыс";
+g3.innerText="Нәтиже бірден көрінеді";
+contactTitle.innerText="Байланыс";
+addressText.innerText="📍 Алматы, Рыскулова 103/3";
+}
+}
+</script>
+
+</body>
+</html>
